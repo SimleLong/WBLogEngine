@@ -10,6 +10,7 @@
 #import <signal.h>
 #import "WBRecordCrashTools.h"
 #import <execinfo.h>
+#import "NSMutableDictionary+WBLogSetValue.h"
 
 #define kWBrashTypeKey                      "type"
 #define kWBrashSubtypeKey                   "subtype"
@@ -120,7 +121,7 @@
 
 - (void)p_updateBacktraceToDictionary:(NSMutableDictionary *)dic fromSigalCode:(int)signalcode
 {
-    [dic setObject:@kWBrashTypeValue_Signal forKey:@kWBrashTypeKey];
+    [dic setLogSafeObject:@kWBrashTypeValue_Signal forKey:@kWBrashTypeKey];
     
     NSString *subtype = nil;
     switch (signalcode)
@@ -134,7 +135,7 @@
         default:
             break;
     }
-    [dic setObject:subtype forKey:@kWBrashSubtypeKey];
+    [dic setLogSafeObject:subtype forKey:@kWBrashSubtypeKey];
     NSInteger crashedThread = w_mach_crashedThreadIndex();
     
     void* callstack[128];
@@ -161,7 +162,7 @@
             [self.crashLogDelegate extensionCrashLogDictionary:dic];
         }
     }
-    [dic setObject:content forKey:@"content"];
+    [dic setLogSafeObject:content forKey:@"content"];
     
     [content release];
 
@@ -169,8 +170,8 @@
 
 - (void)p_updateBacktraceToDictionary:(NSMutableDictionary *)dic fromException:(NSException*)exception
 {
-    [dic setObject:@kWBrashTypeValue_Signal forKey:@kWBrashTypeKey];
-    [dic setObject:[exception name] forKey:@kWBrashSubtypeKey];
+    [dic setLogSafeObject:@kWBrashTypeValue_Signal forKey:@kWBrashTypeKey];
+    [dic setLogSafeObject:[exception name] forKey:@kWBrashSubtypeKey];
     
     NSInteger crashedThread = w_mach_crashedThreadIndex();
     
@@ -190,7 +191,7 @@
         }
     }
     
-    [dic setObject:content forKey:@"content"];
+    [dic setLogSafeObject:content forKey:@"content"];
     [content release];
 
 }

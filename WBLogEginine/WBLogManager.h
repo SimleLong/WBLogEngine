@@ -40,4 +40,8 @@
 
 - (void)logWithString:(NSString*)str;
 - (void)logWithFormat:(NSString*)str, ...;
+
+- (BOOL)cacheDevLogData:(NSData *)logData;
+- (BOOL)cacheUserLogData:(NSData *)logData;
+
 @end

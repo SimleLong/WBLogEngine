@@ -9,9 +9,11 @@
 #import "WBLogManager.h"
 #import "WBRecordFileLog.h"
 #import "WBRecordCrashLog.h"
+#import "WBLogFileAccess.h"
 
 @interface WBLogManager()<WBCrashLogDelegate>
 @property (nonatomic, strong)WBRecordFileLog *fileLogRecord;
+@property (nonatomic, strong)WBLogFileAccess *LogfileAccess;
 
 @end
 @implementation WBLogManager
@@ -37,6 +39,8 @@
         WBRecordFileLog *fileLog = [[[WBRecordFileLog alloc]init]autorelease];
         self.fileLogRecord = fileLog;
         
+        self.LogfileAccess = [[[WBLogFileAccess alloc] init] autorelease];
+        
         _logPath = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
     }
     return self;
@@ -53,6 +57,11 @@
     if (_logPath) {
         [_logPath release];
         _logPath = nil;
+    }
+    
+    if (_LogfileAccess) {
+        [_LogfileAccess release];
+        _LogfileAccess = nil;
     }
     
     [super dealloc];
@@ -74,6 +83,16 @@
     NSString* str1 = [[[NSString alloc] initWithFormat:str arguments:objects] autorelease];
     
     [self.fileLogRecord logWithString:str1];
+}
+
+- (BOOL)cacheDevLogData:(NSData *)logData
+{
+    return [self.LogfileAccess cacheDevLogData:logData];
+}
+
+- (BOOL)cacheUserLogData:(NSData *)logData
+{
+    return [self.LogfileAccess cacheUserLogData:logData];
 }
 
 - (void)configureLogPath:(NSString *)path

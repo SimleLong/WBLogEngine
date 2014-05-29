@@ -25,6 +25,8 @@
 		00A32C2C192D94ED0097718D /* WBLogEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A32C2B192D94ED0097718D /* WBLogEngineTests.m */; };
 		00A32C37192DD2610097718D /* WBRecordCrashLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A32C36192DD2610097718D /* WBRecordCrashLog.m */; };
 		00B8D0811934843C00DA60F3 /* WBRecordFileLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B8D0801934843C00DA60F3 /* WBRecordFileLog.m */; };
+		0AAE3D24193709EA004F0A11 /* WBLogFileAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE3D23193709EA004F0A11 /* WBLogFileAccess.m */; };
+		0AAE3D3319370B9C004F0A11 /* NSMutableDictionary+WBLogSetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE3D3219370B9C004F0A11 /* NSMutableDictionary+WBLogSetValue.m */; };
 		D153104B1935D7AF00245860 /* WBLogFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D153104A1935D7AF00245860 /* WBLogFileManager.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,10 @@
 		00A32C36192DD2610097718D /* WBRecordCrashLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBRecordCrashLog.m; sourceTree = "<group>"; };
 		00B8D07F1934843C00DA60F3 /* WBRecordFileLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBRecordFileLog.h; sourceTree = "<group>"; };
 		00B8D0801934843C00DA60F3 /* WBRecordFileLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBRecordFileLog.m; sourceTree = "<group>"; };
+		0AAE3D22193709EA004F0A11 /* WBLogFileAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBLogFileAccess.h; sourceTree = "<group>"; };
+		0AAE3D23193709EA004F0A11 /* WBLogFileAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBLogFileAccess.m; sourceTree = "<group>"; };
+		0AAE3D3119370B9C004F0A11 /* NSMutableDictionary+WBLogSetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+WBLogSetValue.h"; sourceTree = "<group>"; };
+		0AAE3D3219370B9C004F0A11 /* NSMutableDictionary+WBLogSetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+WBLogSetValue.m"; sourceTree = "<group>"; };
 		D15310491935D7AF00245860 /* WBLogFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBLogFileManager.h; sourceTree = "<group>"; };
 		D153104A1935D7AF00245860 /* WBLogFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBLogFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,12 +144,16 @@
 				0030BE6D193350E300E01942 /* WBDetailViewController.m */,
 				009C292019334EE1005DF196 /* WBLogManager.h */,
 				009C292119334EE1005DF196 /* WBLogManager.m */,
+				0AAE3D22193709EA004F0A11 /* WBLogFileAccess.h */,
+				0AAE3D23193709EA004F0A11 /* WBLogFileAccess.m */,
 				00B8D07F1934843C00DA60F3 /* WBRecordFileLog.h */,
 				00B8D0801934843C00DA60F3 /* WBRecordFileLog.m */,
 				00A32C35192DD2610097718D /* WBRecordCrashLog.h */,
 				00A32C36192DD2610097718D /* WBRecordCrashLog.m */,
 				009C291D193323A1005DF196 /* WBRecordCrashTools.h */,
 				009C291E193323A1005DF196 /* WBRecordCrashTools.m */,
+				0AAE3D3119370B9C004F0A11 /* NSMutableDictionary+WBLogSetValue.h */,
+				0AAE3D3219370B9C004F0A11 /* NSMutableDictionary+WBLogSetValue.m */,
 				00A32C18192D94ED0097718D /* Images.xcassets */,
 				00A32C0D192D94ED0097718D /* Supporting Files */,
 			);
@@ -277,11 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A32C13192D94ED0097718D /* main.m in Sources */,
+				0AAE3D24193709EA004F0A11 /* WBLogFileAccess.m in Sources */,
 				D153104B1935D7AF00245860 /* WBLogFileManager.m in Sources */,
 				00A32C17192D94ED0097718D /* WBAppDelegate.m in Sources */,
 				009C291C19332201005DF196 /* WBMainViewController.m in Sources */,
 				009C292219334EE1005DF196 /* WBLogManager.m in Sources */,
 				009C291F193323A1005DF196 /* WBRecordCrashTools.m in Sources */,
+				0AAE3D3319370B9C004F0A11 /* NSMutableDictionary+WBLogSetValue.m in Sources */,
 				0030BE6E193350E300E01942 /* WBDetailViewController.m in Sources */,
 				00B8D0811934843C00DA60F3 /* WBRecordFileLog.m in Sources */,
 				00A32C37192DD2610097718D /* WBRecordCrashLog.m in Sources */,
